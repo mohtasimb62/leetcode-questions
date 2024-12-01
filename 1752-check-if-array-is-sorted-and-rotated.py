@@ -1,3 +1,4 @@
+# TC: O(n), SC: O(1)
 def check(self, nums: List[int]) -> bool:
     count = 0
 

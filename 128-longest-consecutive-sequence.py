@@ -1,4 +1,4 @@
-# brute force
+# brute force - TC: O(n^2), SC: O(1)
 def linearSearch(self, num: int, nums: List[int]) -> bool:
 	for i in nums:
 	    if i == num:
@@ -24,8 +24,7 @@ def longestConsecutive(self, nums: List[int]) -> int:
 
 
 
-
-# sorting
+# sorting - TC: O(nlogn) + O(n), SC: O(1)
 def longestConsecutive(self, nums: List[int]) -> int:
 
 	if len(nums) == 0:
@@ -50,7 +49,7 @@ def longestConsecutive(self, nums: List[int]) -> int:
 
 
 
-# optimal (HashSet)
+# optimal (HashSet) - TC: O(n), SC: O(n)
 def longestConsecutive(self, nums: List[int]) -> int:
 
 	if len(nums) == 0:
