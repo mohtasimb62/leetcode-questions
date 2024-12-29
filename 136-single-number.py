@@ -1,6 +1,6 @@
 '''
 Brute Force:
-    TC: O(n^2),
+    TC: O(n^2) (this gives a time limit exceeded),
     SC: O(1)
 
     For every element, check if it appears again. Return the element that appears once.
@@ -40,3 +40,19 @@ def singleNumber(self, nums: List[int]) -> int:
         singleNumber = item
         
     return singleNumber
+
+
+'''
+Optimal approach (using xor)
+    TC: O(n),
+    SC: O(1)
+
+    Using xor
+'''
+def singleNumber(self, nums: List[int]) -> int:
+    xor = 0
+
+    for num in nums:
+        xor ^= num
+
+    return xor
