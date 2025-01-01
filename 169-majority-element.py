@@ -27,8 +27,6 @@ def majorityElement(self, nums: List[int]) -> int:
 Optimal approach (Moore's voting algorithm):
     TC: O(n),
     SC: O(1)
-
-    
 '''
 def majorityElement(self, nums: List[int]) -> int:
     count = 0
