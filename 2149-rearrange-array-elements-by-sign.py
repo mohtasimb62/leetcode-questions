@@ -1,7 +1,7 @@
 # This problem NEEDS extra space - i.e. it is not possible to achieve O(1) SC.
 
 '''
-Extra space approach:
+Brute force approach:
     TC: O(n),
     SC: O(n)
 
