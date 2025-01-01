@@ -21,3 +21,34 @@ def majorityElement(self, nums: List[int]) -> int:
             return key
 
     return 0
+
+
+'''
+Optimal approach (Moore's voting algorithm):
+    TC: O(n),
+    SC: O(1)
+
+    
+'''
+def majorityElement(self, nums: List[int]) -> int:
+    count = 0
+    element = 0
+
+    for i in range(0, len(nums)):
+        if count == 0:
+            count = 1
+            element = nums[i]
+        elif nums[i] == element:
+            count += 1
+        else:
+            count -= 1
+
+    elementCounter = 0
+    for i in range(0, len(nums)):
+        if nums[i] == element:
+            elementCounter += 1
+
+    if elementCounter > (len(nums) // 2):
+        return element
+
+    return 0
