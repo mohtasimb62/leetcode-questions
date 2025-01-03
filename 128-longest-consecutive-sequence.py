@@ -1,26 +1,26 @@
 # brute force - TC: O(n^2), SC: O(1)
-def linearSearch(self, num: int, nums: List[int]) -> bool:
-	for i in nums:
-	    if i == num:
-		return True
-	return False
+# def linearSearch(self, num: int, nums: List[int]) -> bool:
+# 	for i in nums:
+# 	    if i == num:
+# 			return True
+# 	return False
 
-def longestConsecutive(self, nums: List[int]) -> int:
-	if len(nums) == 0:
-	    return 0
+# def longestConsecutive(self, nums: List[int]) -> int:
+# 	if len(nums) == 0:
+# 	    return 0
 
-	longest = 1 	# to keep track of the longest in each iteration
+# 	longest = 1 	# to keep track of the longest in each iteration
 
-	for i in range(len(nums)):
-	    currNum = nums[i]	# to check if currNum + 1 is present (while loop)
-	    count = 1			# to keep track of the currect longest
-	    while self.linearSearch(currNum + 1, nums):
-			count += 1
-			currNum += 1
+# 	for i in range(len(nums)):
+# 	    currNum = nums[i]	# to check if currNum + 1 is present (while loop)
+# 	    count = 1			# to keep track of the currect longest
 
-	    longest = max(longest, count)
+# 	    while self.linearSearch(currNum + 1, nums):
+# 			count += 1
+# 			currNum += 1
+# 			longest = max(longest, count)
 
-	return longest
+# 	return longest
 
 
 
