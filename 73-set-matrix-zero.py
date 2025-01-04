@@ -33,3 +33,33 @@ class Solution:
         for i in range(0, len(matrix)):
             if matrix[i][jthCol] != 0:
                 matrix[i][jthCol] = "X"
+
+
+
+'''
+Better approach:
+    TC: O(n^2),
+    SC: O(n) + O(m)
+
+    Instead of iterating the matrix 3 times, we reduce that to 2 by using extra space. We create 2 extra lists
+    which keep track of the 0s (just like the brute force approach). Finally, in the second iteration, if either
+    of the lists is marked, we put a 0 in that position in the matrix.
+'''
+class Solution:
+    def setZeroes(self, matrix: List[List[int]]) -> None:
+        """
+        Do not return anything, modify matrix in-place instead.
+        """
+        rowMarks = [0] * len(matrix)
+        colMarks = [0] * len(matrix[0])
+
+        for i in range(0, len(matrix)):
+            for j in range(0, len(matrix[0])):
+                if matrix[i][j] == 0:
+                    rowMarks[i] = 1
+                    colMarks[j] = 1
+
+        for i in range(0, len(matrix)):
+            for j in range(0, len(matrix[0])):
+                if rowMarks[i] == 1 or colMarks[j] == 1:
+                    matrix[i][j] = 0
