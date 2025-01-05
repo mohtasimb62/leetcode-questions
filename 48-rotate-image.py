@@ -30,6 +30,8 @@ def rotate(self, matrix: List[List[int]]) -> None:
 Optimal approach:
     TC: O(n^2) + O(n^2),
     SC: O(1)
+
+    First transpose the matrix then reverse each row in the matrix
 '''
 def rotate(self, matrix: List[List[int]]) -> None:
     """
