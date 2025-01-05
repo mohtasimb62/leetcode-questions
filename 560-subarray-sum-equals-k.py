@@ -39,3 +39,10 @@ def subarraySum(self, nums: List[int], k: int) -> int:
                 count += 1
 
     return count
+
+
+'''
+Optimal approach:
+    TC: O(n)
+    SC: O(1)
+'''
