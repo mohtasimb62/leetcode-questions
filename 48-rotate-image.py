@@ -24,3 +24,24 @@ def rotate(self, matrix: List[List[int]]) -> None:
     for i in range(0, n):
         for j in range(0, n):
             matrix[i][j] = rotatedMatrix[i][j]
+
+
+'''
+Optimal approach:
+    TC: O(n^2) + O(n^2),
+    SC: O(1)
+'''
+def rotate(self, matrix: List[List[int]]) -> None:
+    """
+    Do not return anything, modify matrix in-place instead.
+    """
+    n = len(matrix)
+
+    for i in range(0, n):
+        for j in range(i):
+            tmp = matrix[i][j]
+            matrix[i][j] = matrix[j][i]
+            matrix[j][i] = tmp
+
+    for i in range(0, n):
+        matrix[i].reverse()
