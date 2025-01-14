@@ -76,3 +76,70 @@ class Solution:
         result[1] = ub - 1
 
         return result
+
+
+'''
+Optimal approach (without lower and upper bound concept, i.e. raw binary search):
+    TC: O(logn),
+    SC: O(1)
+
+    Just do binary search 2 times to find the first occurance and the last occurance.
+'''
+
+class Solution:
+    def firstOccurance(self, nums, target):
+        first = -1
+        low = 0
+        high = len(nums) - 1
+
+        while low <= high:
+            mid = (low + high) // 2
+            
+            if nums[mid] == target:
+                first = mid
+                high = mid - 1
+            elif nums[mid] > target:
+                high = mid - 1
+            else:
+                low = mid + 1
+        
+        return first
+    
+    def lastOccurance(self, nums, target):
+        last = -1
+        low = 0
+        high = len(nums) - 1
+
+        while low <= high:
+            mid = (low + high) // 2
+            
+            if nums[mid] == target:
+                last = mid
+                low = mid + 1
+            elif nums[mid] > target:
+                high = mid - 1
+            else:
+                low = mid + 1
+        
+        return last
+
+    def searchRange(self, nums: List[int], target: int) -> List[int]:
+        result = [-1, -1]
+
+        startingIndex = self.firstOccurance(nums, target)
+
+        # you can check if startingIndex is -1 to avoid calling lastOccurance as if the startingIndex is -1 (
+        # which means that that element is not even in the list), there's is no need to call lastOccurance which
+        # saves a O(logn) operation.
+        if startingIndex == -1:
+            return result
+            
+        endingIndex = self.lastOccurance(nums, target)
+
+        result[0] = startingIndex
+        result[1] = endingIndex
+
+        return result
+
+
+
