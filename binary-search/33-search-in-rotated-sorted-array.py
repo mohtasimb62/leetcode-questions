@@ -15,6 +15,10 @@ Optimal approach:
     areas where the target is guaranteed to be NOT found. Note that it is GUARANTEED that at each iteration,
     only ONE side (either the left or right) will be sorted.
 '''
+
+from typing import List
+
+
 def search(self, nums: List[int], target: int) -> int:
     low = 0
     high = len(nums) - 1

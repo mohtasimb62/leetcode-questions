@@ -5,6 +5,9 @@ With extra space:
 
     Store the 0's, 1's, and 2's (in that order) to a new list and for every i, nums[i] = newArr[i]
 '''
+
+from typing import List
+
 def sortColors(self, nums: List[int]) -> None:
     """
     Do not return anything, modify nums in-place instead.

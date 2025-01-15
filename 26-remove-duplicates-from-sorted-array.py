@@ -1,4 +1,6 @@
 # brute force - TC: O(nlogn) + O(n), SC: O(n)
+from typing import List
+
 def removeDuplicates(self, nums: List[int]) -> int:
     numsSet = set()                 # to remove the duplicates from nums
 

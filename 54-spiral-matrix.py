@@ -3,6 +3,7 @@ No brute-better-optimal approach for this problem. Just have to implement it in 
     TC: O(n*m),
     SC: O(n*m) for the result list
 '''
+from typing import List
 
 def spiralOrder(self, matrix: List[List[int]]) -> List[int]:
     n = len(matrix)

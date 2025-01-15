@@ -9,6 +9,8 @@ has O(logn) time complexity.
     right. Return the smallest possible index.
 '''
 
+from typing import List
+
 def searchInsert(self, nums: List[int], target: int) -> int:
     sizeOfNums = len(nums)
     low = 0 

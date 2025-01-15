@@ -6,6 +6,9 @@ Brute force approach:
     Iterate the matrix and mark the rows and cols with an "X". Iterate the matrix again and mark every "X"
     with 0s
 '''
+
+from typing import List
+
 class Solution:
     def setZeroes(self, matrix: List[List[int]]) -> None:
         """

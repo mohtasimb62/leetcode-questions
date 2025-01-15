@@ -6,6 +6,8 @@ Brute force solution:
     Create a new matrix that stores the rotated matrix and do the shiftings there. Iterate over the rotated
     matrix and put the elements in the original matrix.
 '''
+from typing import List
+
 def rotate(self, matrix: List[List[int]]) -> None:
     """
     Do not return anything, modify matrix in-place instead.

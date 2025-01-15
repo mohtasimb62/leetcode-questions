@@ -5,6 +5,9 @@ Extra space approach:
 
     Store each element in a hashmap and store it's count. Return the element that appears 'len(nums) // 2' times
 '''
+
+from typing import List
+
 def majorityElement(self, nums: List[int]) -> int:
     hashmap = {}
 

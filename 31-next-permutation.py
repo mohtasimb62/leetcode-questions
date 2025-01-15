@@ -23,6 +23,9 @@ Optimal approach:
        immediate permutation, if we keep the remaining elements as small as possible (which is achieved by
        reversing the remaining), we have our next permutation.
 '''
+
+from typing import List
+
 def nextPermutation(self, nums: List[int]) -> None:
     """
     Do not return anything, modify nums in-place instead.

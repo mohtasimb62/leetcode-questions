@@ -1,3 +1,5 @@
+from typing import List
+
 '''
 Brute force approach:
     TC: O(n^3),

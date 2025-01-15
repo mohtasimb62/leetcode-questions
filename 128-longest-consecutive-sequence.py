@@ -1,4 +1,6 @@
 # brute force - TC: O(n^2), SC: O(1)
+from typing import List
+
 # def linearSearch(self, num: int, nums: List[int]) -> bool:
 # 	for i in nums:
 # 	    if i == num:

@@ -1,3 +1,6 @@
+from collections import defaultdict
+from typing import List
+
 '''
 With extra space:
     TC: O(n),

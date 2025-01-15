@@ -5,6 +5,9 @@ Brute Force:
 
     For every element, check if it appears again. Return the element that appears once.
 '''
+
+from typing import List
+
 def singleNumber(self, nums: List[int]) -> int:
     if len(nums) == 1:
         return nums[0]

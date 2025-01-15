@@ -5,6 +5,8 @@ Brute force approach:
 
     Just do a linear search and find the first and last occurance of target in nums array.
 '''
+from typing import List
+
 
 def searchRange(self, nums: List[int], target: int) -> List[int]:
     result = [-1, -1]
@@ -133,7 +135,7 @@ class Solution:
         # saves a O(logn) operation.
         if startingIndex == -1:
             return result
-            
+
         endingIndex = self.lastOccurance(nums, target)
 
         result[0] = startingIndex

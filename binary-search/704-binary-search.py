@@ -1,3 +1,5 @@
+from typing import List
+
 def search(self, nums: List[int], target: int) -> int:
     low = 0
     high = len(nums) - 1
