@@ -6,6 +6,9 @@ Brute Force:
     Just check whether or not each element in nums exist between 0 - len(nums)+1 (+1 to account for the 
     last number)
 '''
+
+from typing import List
+
 def missingNumber(self, nums: List[int]) -> int:
     for i in range(0, len(nums)+1):
         if i not in nums:
