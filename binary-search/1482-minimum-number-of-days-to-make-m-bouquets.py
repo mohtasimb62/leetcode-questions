@@ -40,4 +40,44 @@ class Solution:
     
 
 '''
+Optimal approach:
+    TC: O(log(max-min+1)) * O(n)
+    SC: O(1)
+
+    Instead of doing a linear search for each day, do a binary search to find the minimum day where
+    m bouquets can be made (similar to leetcode 875)
 '''
+class Solution:
+    def minDays(self, bloomDay: List[int], m: int, k: int) -> int:
+        low = min(bloomDay)
+        high = max(bloomDay)
+
+        ans = -1
+
+        while low <= high:
+            mid = (low + high) // 2
+
+            bouquets = self.flowersBloomed(bloomDay, k, mid)
+
+            if bouquets >= m:
+                ans = mid
+                high = mid - 1
+            else:
+                low = mid + 1
+            
+        return ans
+
+    def flowersBloomed(self, arr, k, day):
+        total = 0
+        count = 0
+
+        for i in range(0, len(arr)):
+            if arr[i] <= day:
+                count += 1
+            else:
+                total += count // k
+                count = 0
+
+        total += count // k
+
+        return total
