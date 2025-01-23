@@ -4,6 +4,6 @@ def transform_string(input_string: str) -> str:
     hyphenated = no_periods.replace(" ", "-")
     return hyphenated+".py"
 
-input_string = "1283. Find the Smallest Divisor Given a Threshold"
+input_string = "1011. Capacity To Ship Packages Within D Days"
 result = transform_string(input_string)
 print(result)
