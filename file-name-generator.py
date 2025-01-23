@@ -1,8 +1,9 @@
-def format_string(input_string):
+def transform_string(input_string: str) -> str:
     lowercased = input_string.lower()
-    formatted = lowercased.replace(" ", "-").replace(".", "-")
-    return formatted
+    no_periods = lowercased.replace(".", "")
+    hyphenated = no_periods.replace(" ", "-")
+    return hyphenated
 
 input_string = "1283. Find the Smallest Divisor Given a Threshold"
-output = format_string(input_string)
-print(output)
+result = transform_string(input_string)
+print(result)
