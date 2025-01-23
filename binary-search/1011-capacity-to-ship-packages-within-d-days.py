@@ -35,3 +35,45 @@ class Solution:
                 currLoad = arr[i]
 
         return days
+    
+
+'''
+Optimal approach:
+    TC: O(sum(n)) * O(max(n)) * O(logn)
+    SC: O(1)
+
+    Just like the brute force, but instead of a linear approach to calculate the days taken for each
+    capacity, find the capacity using binary search and calculate the days taken. Return the minimum
+    capacity within which the ship can ship within `days`.
+'''
+class Solution:
+    def shipWithinDays(self, weights: List[int], days: int) -> int:
+        low = max(weights)
+        high = sum(weights)
+        ans = -1
+
+        while low <= high:
+            mid = (low + high) // 2
+
+            daysTaken = self.calculateDays(weights, mid)
+
+            if daysTaken <= days:
+                ans = mid
+                high = mid - 1
+            else:
+                low = mid + 1
+
+        return ans
+
+    def calculateDays(self, arr, capacity):
+        days = 1
+        currLoad = 0
+
+        for i in range(0, len(arr)):
+            if currLoad + arr[i] <= capacity:
+                currLoad += arr[i]
+            else:
+                days += 1
+                currLoad = arr[i]
+
+        return days
