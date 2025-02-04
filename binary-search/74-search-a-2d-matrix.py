@@ -62,7 +62,33 @@ Optimal approach:
     TC: O(log(n*m))
     SC: O(1)
 
+    Think about the matrix (2d list) as a list (1d list), for example by flattening it. If we can do that, then it becomes a standard
+    binary search problem. But it's not really possible to flatten the matrix as the TC will be O(n*m).
+    Instead, we use the division and modulo operator to find the index of the element as if it was in a
+    1d list. After we have that, it becomes a standard binary search problem.
 '''
+class Solution:
+    def searchMatrix(self, matrix: List[List[int]], target: int) -> bool:
+        row = len(matrix)
+        col = len(matrix[0])
+
+        low = 0
+        high = row*col-1
+
+        while low <= high:
+            mid = (low + high) // 2
+
+            currRow = mid // col    # this gives the row if it was a 1d list
+            currCol = mid % col     # this gives the column if it was a 1d list
+
+            if matrix[currRow][currCol] == target:
+                return True
+            elif matrix[currRow][currCol] < target:
+                low = mid + 1
+            else:
+                high = mid - 1
+
+        return False
 
 
 '''
