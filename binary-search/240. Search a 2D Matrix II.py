@@ -55,3 +55,33 @@ class Solution:
                 low = mid + 1
 
         return False
+    
+
+'''
+Optimal approach:
+    TC: O(n+m)
+    SC: O(1)
+
+    We have to first figure out where we can start from. Notice that the top right corner and the bottom
+    left corner have a property where it's ascending from left to right and continues it from top to 
+    bottom. In this case, we start from the top right. If the target is greater than the current element,
+    we move down for that property. Else, we move left.
+'''
+class Solution:
+    def searchMatrix(self, matrix: List[List[int]], target: int) -> bool:
+        n = len(matrix)
+        m = len(matrix[0])
+
+        row = 0
+        col = m - 1
+
+        while row < n and col >= 0:
+            if matrix[row][col] == target:
+                return True
+            elif matrix[row][col] > target:
+                col -= 1
+            else:
+                row += 1
+
+        return False
+            
