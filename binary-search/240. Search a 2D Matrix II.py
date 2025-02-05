@@ -19,3 +19,39 @@ class Solution:
                     return True
 
         return False
+    
+
+'''
+Better approach:
+    TC: O(n*log(m))
+    SC: O(1)
+
+    Instead of iterating over each element in the matrix, we can iterate over each row and perform a
+    binary search.
+'''
+class Solution:
+    def searchMatrix(self, matrix: List[List[int]], target: int) -> bool:
+        row = len(matrix)
+        col = len(matrix[0])
+        for i in range(0, row):
+            if self.binarySearch(matrix[i], target):
+                return True
+
+        return False
+
+
+    def binarySearch(self, arr, target):
+        low = 0
+        high = len(arr)
+
+        while low <= high:
+            mid = (low + high) // 2
+
+            if arr[mid] == target:
+                return True
+            elif arr[mid] > target:
+                high = mid - 1
+            else:
+                low = mid + 1
+
+        return False
